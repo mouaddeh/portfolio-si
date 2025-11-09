@@ -33,9 +33,8 @@ a {
     text-decoration: none;
     color: var(--light-text);
 }
-
 /* ===================================================
-   3. STYLES CORRIGÉS DE LA LANDING PAGE (V5)
+   3. STYLES CORRIGÉS DE LA LANDING PAGE (V6 - Avec "SI" en haut à gauche)
    =================================================== */
 .landing-page {
     position: relative; /* CONTEXTE POUR LE POSITIONNEMENT ABSOLU */
@@ -56,6 +55,36 @@ a {
     text-align: right;
     z-index: 10;
 }
+
+/* NOUVEAU : Conteneur pour le texte "SI" et le placeholder */
+.landing-top-left {
+    position: absolute;
+    top: 40px; /* Cloué en haut */
+    left: 40px; /* Cloué à gauche */
+    display: flex; /* Pour aligner l'icône et le texte */
+    align-items: center;
+    gap: 15px; /* Espace entre l'icône et le texte */
+    z-index: 10;
+}
+
+/* L'espace pour l'icône/image (le cercle rouge vide que vous avez marqué) */
+.landing-icon-placeholder {
+    width: 40px; /* Taille du cercle */
+    height: 40px;
+    border: 2px solid var(--light-text); /* Bordure blanche comme sur la ref */
+    border-radius: 50%; /* Pour faire un cercle */
+    background-color: transparent; /* Fond transparent */
+}
+
+/* Le texte "SI" en haut à gauche */
+.si-text {
+    font-family: var(--font-heading); /* Même police que PORTFOLIO */
+    font-size: 2.5em; /* Taille un peu plus petite que PORTFOLIO */
+    color: var(--light-text);
+    line-height: 1; /* Pour qu'il n'y ait pas trop d'espace */
+    text-transform: uppercase;
+}
+
 
 /* LE TITRE GÉANT EN ARRIÈRE-PLAN ET AU CENTRE */
 .landing-portfolio-title {
@@ -94,16 +123,7 @@ a {
     color: #ccc;
 }
 
-/* Le texte "SI" */
-.creative-text {
-    font-family: var(--font-body);
-    font-size: 1.8em;
-    color: var(--light-text);
-    display: block;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
+/* Le bouton */
 .view-content-button {
     display: inline-block;
     padding: 15px 30px;
@@ -222,7 +242,7 @@ a {
 }
 
 /* ===================================================
-   6. Styles Responsive (Corrections V5)
+   6. Styles Responsive (Corrections V6)
    =================================================== */
 /* (Remplacez aussi l'ancienne section 6) */
 @media (max-width: 992px) {
@@ -233,20 +253,25 @@ a {
         padding-top: 80px; /* Plus d'espace en haut */
     }
     .header-info {
-        position: static; /* N'est plus cloué */
+        position: static;
         text-align: center;
         margin-bottom: 40px;
     }
+    .landing-top-left {
+        position: static;
+        justify-content: center; /* Centre le SI sur mobile */
+        margin-bottom: 40px;
+    }
     .landing-portfolio-title {
-        position: static; /* N'est plus cloué */
-        transform: none; /* Annule le centrage */
+        position: static;
+        transform: none;
         text-align: center;
         font-size: 22vw;
         line-height: 1.1;
         margin-bottom: 40px;
     }
     .landing-content {
-        position: static; /* N'est plus cloué */
+        position: static;
         grid-template-columns: 1fr; /* 1 COLONNE */
         gap: 40px;
         width: 100%;
