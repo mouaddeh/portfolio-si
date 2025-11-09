@@ -35,24 +35,13 @@ a {
 }
 
 /* ===================================================
-   3. STYLES CORRIGÉS DE LA LANDING PAGE (index.html)
+   3. STYLES CORRIGÉS DE LA LANDING PAGE (V5)
    =================================================== */
 .landing-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative; /* CONTEXTE POUR LE POSITIONNEMENT ABSOLU */
     min-height: 100vh;
     padding: 40px;
-    overflow: hidden; /* Important */
-}
-
-.landing-main {
-    max-width: 1400px;
-    width: 100%;
-    position: relative; /* CONTEXTE DE POSITIONNEMENT */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden; /* Empêche les débordements */
 }
 
 /* Positionnement du texte en haut à droite */
@@ -62,37 +51,40 @@ a {
     line-height: 1.4;
     color: #bbb;
     position: absolute;
-    top: -80px; /* Ajustez au besoin */
-    right: 0px;
+    top: 40px; /* Cloué en haut */
+    right: 40px; /* Cloué à droite */
     text-align: right;
     z-index: 10;
 }
 
-/* LE TITRE GÉANT EN ARRIÈRE-PLAN */
+/* LE TITRE GÉANT EN ARRIÈRE-PLAN ET AU CENTRE */
 .landing-portfolio-title {
     font-family: var(--font-heading);
-    font-size: 18vw; /* Taille responsive énorme */
+    font-size: 18vw;
     line-height: 1;
     color: var(--light-text);
     text-align: center;
     white-space: nowrap;
     user-select: none;
-    position: absolute; /* POSITIONNEMENT ABSOLU */
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); /* Centrage parfait */
     z-index: 0; /* EN ARRIÈRE-PLAN */
 }
 
-/* LA GRILLE DE CONTENU EN AVANT-PLAN */
+/* LA GRILLE DE CONTENU EN AVANT-PLAN ET EN BAS */
 .landing-content {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 COLONNES */
     align-items: flex-start;
     gap: 60px;
-    position: relative; /* Pour être au-dessus du titre */
+    position: absolute;
+    bottom: 40px; /* Cloué en bas */
+    left: 40px; /* Cloué à gauche */
+    right: 40px; /* Cloué à droite */
     z-index: 1; /* EN AVANT-PLAN */
-    width: 100%;
+    width: calc(100% - 80px); /* Prend toute la largeur moins le padding */
 }
 
 .landing-text-left, .landing-text-right {
@@ -100,9 +92,9 @@ a {
     font-size: 1.1em;
     line-height: 1.8;
     color: #ccc;
-    padding-top: 20px; /* Aligne un peu mieux avec le texte */
 }
 
+/* Le texte "SI" */
 .creative-text {
     font-family: var(--font-body);
     font-size: 1.8em;
@@ -230,43 +222,37 @@ a {
 }
 
 /* ===================================================
-   6. Styles Responsive (Corrections)
+   6. Styles Responsive (Corrections V5)
    =================================================== */
+/* (Remplacez aussi l'ancienne section 6) */
 @media (max-width: 992px) {
-    .landing-content {
-        grid-template-columns: 1fr; /* 1 COLONNE sur mobile */
+    /* Sur mobile, on change de stratégie : tout devient statique */
+    .landing-page {
+        position: static;
+        min-height: auto;
+        padding-top: 80px; /* Plus d'espace en haut */
+    }
+    .header-info {
+        position: static; /* N'est plus cloué */
         text-align: center;
+        margin-bottom: 40px;
+    }
+    .landing-portfolio-title {
+        position: static; /* N'est plus cloué */
+        transform: none; /* Annule le centrage */
+        text-align: center;
+        font-size: 22vw;
+        line-height: 1.1;
+        margin-bottom: 40px;
+    }
+    .landing-content {
+        position: static; /* N'est plus cloué */
+        grid-template-columns: 1fr; /* 1 COLONNE */
         gap: 40px;
+        width: 100%;
+        text-align: center;
     }
     .landing-text-left, .landing-text-right {
         text-align: center;
-    }
-    .landing-portfolio-title {
-        font-size: 22vw; /* Plus gros sur mobile pour l'impact */
-    }
-    .header-info {
-        top: -40px;
-        font-size: 0.9em;
-        width: 100%;
-        text-align: center;
-        right: auto;
-    }
-    .toc-title {
-        font-size: 3.5em;
-    }
-}
-
-@media (max-width: 480px) {
-    .landing-page {
-        padding: 20px;
-    }
-    .landing-portfolio-title {
-        font-size: 25vw;
-    }
-    .toc-title {
-        font-size: 2.5em;
-    }
-    .toc-buttons-grid {
-        grid-template-columns: 1fr;
     }
 }
