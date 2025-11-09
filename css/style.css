@@ -295,3 +295,50 @@ footer {
     color: #555;
     clear: both; /* Pour être sûr qu'il est en bas */
 }
+/* --- 10. Formulaire de Contact --- */
+.contact-form-section {
+    background: var(--light-color);
+    padding: 2.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 800px; /* Limite la largeur du formulaire */
+    margin: 0 auto; /* Centre le formulaire */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* S'assure que le padding ne casse pas la largeur */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permet de redimensionner verticalement */
+}
+
+/* Style du bouton d'envoi */
+.contact-form-section .cta-button {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 15px;
+}
+
+/* Style pour le lien contact actif dans le header */
+.logo .contact-link.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
