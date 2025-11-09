@@ -74,7 +74,7 @@ a {
 .si-text {
     font-family: var(--font-heading); /* Même police que PORTFOLIO */
     font-size: 18vw; /* "meme taille" */
-    line-height: 0.8; /* Ligne très serrée */
+    line-height: 1.8; /* Ligne très serrée */
     color: var(--light-text);
     text-transform: uppercase;
 }
