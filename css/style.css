@@ -1,13 +1,13 @@
 /* ===================================================
-   PORTFOLIO SI - STYLE.CSS COMPLET
+   PORTFOLIO SI - STYLE.CSS COMPLET (V3)
    =================================================== */
 
-/* --- 1. Variables (changez les couleurs ici) --- */
+/* --- 1. Variables --- */
 :root {
-    --primary-color: #005A9C; /* Bleu institutionnel */
-    --secondary-color: #f4f4f4; /* Fond gris clair */
-    --dark-color: #333;
+    --primary-color: #005A9C; /* Bleu (utilisé pour les icônes) */
+    --dark-color: #2c3e50;    /* Bleu/Gris foncé (pour header/bannière) */
     --light-color: #fff;
+    --secondary-color: #f4f4f4; /* Fond gris clair */
     --font-family: 'Arial', sans-serif;
 }
 
@@ -16,18 +16,17 @@ body {
     font-family: var(--font-family);
     line-height: 1.7;
     background-color: var(--secondary-color);
-    color: var(--dark-color);
+    color: #333;
     margin: 0;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 h1, h2, h3 {
-    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -37,113 +36,202 @@ h3 { font-size: 1.5em; }
 
 p { margin-bottom: 15px; }
 
-/* --- 3. Header & Navigation --- */
-header {
-    background: var(--primary-color);
-    color: var(--light-color);
-    padding: 2em 0;
-    text-align: center;
-    margin-bottom: 30px;
-}
-header h1 {
-    color: var(--light-color);
-    margin: 0;
-}
-header p {
-    font-style: italic;
-    opacity: 0.9;
-}
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-nav ul li a {
-    color: var(--light-color);
-    text-decoration: none;
-    font-size: 1.1em;
-    padding-bottom: 5px;
-}
-nav ul li a.active, nav ul li a:hover {
-    border-bottom: 2px solid var(--light-color);
+main {
+    padding-top: 30px; /* Espace après la bannière de titre */
 }
 
-/* --- 4. Bouton d'action (CTA) --- */
-.cta-button {
-    display: inline-block;
-    background: var(--primary-color);
-    color: var(--light-color);
-    padding: 10px 20px;
+/* --- 3. NOUVEAU Header (Barre de navigation) --- */
+.main-header {
+    background: var(--light-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo "SI Portfolio" */
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo a {
     text-decoration: none;
+    color: var(--dark-color);
+}
+.logo strong {
+    font-size: 2em;
+    color: var(--dark-color);
+    margin-right: 5px;
+}
+.logo span {
+    font-size: 1.8em;
+    font-weight: 300;
+}
+.logo .contact-link {
+    font-size: 0.9em;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+    color: #555;
+}
+.logo .contact-link i {
+    margin-right: 5px;
+}
+
+/* Navigation principale */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.main-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #555;
+    font-size: 1em;
     border-radius: 5px;
-    font-weight: bold;
     transition: background 0.3s ease;
 }
-.cta-button:hover {
-    background: #003D6B; /* Version plus foncée du bleu */
+.main-nav ul li a i {
+    margin-right: 8px;
+    color: var(--dark-color);
 }
+.main-nav ul li a:hover {
+    background: #eee;
+}
+/* Bouton "Accueil" actif */
+.main-nav ul li a.active {
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+.main-nav ul li a.active i {
+    color: var(--light-color);
+}
+
+/* --- 4. NOUVELLE Bannière de Titre --- */
+.title-banner {
+    background: var(--dark-color);
+    color: var(--light-color);
+    padding: 2.5em 0;
+    text-align: left;
+}
+.title-banner h1 {
+    color: var(--light-color);
+    margin: 0 0 10px 0;
+}
+.title-banner p {
+    margin: 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
 
 /* --- 5. Grille de Cartes (Page d'accueil) --- */
 .card-grid {
     display: grid;
-    /* Crée 3 colonnes, mais s'adapte à moins */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; /* Espace entre les cartes */
+    gap: 25px;
 }
-
 .card {
     background: var(--light-color);
     border-radius: 8px;
     padding: 30px;
     text-align: left;
     text-decoration: none;
-    color: var(--dark-color);
+    color: #333;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent; /* Bordure transparente par défaut */
+    border: 2px solid transparent;
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
-
-/* Style pour la carte surlignée */
 .card.highlighted {
     border-color: var(--primary-color);
 }
-
-/* Style des icônes */
 .card i {
-    font-size: 2.5em; /* Taille de l'icône */
+    font-size: 2.5em;
     color: var(--primary-color);
     margin-bottom: 15px;
 }
-
 .card h3 {
     margin: 0 0 5px 0;
-    color: var(--dark-color); /* Assure que le titre est sombre */
+    color: var(--dark-color);
     font-size: 1.4em;
 }
-
 .card p {
     font-size: 0.9em;
-    color: #666; /* Gris pour la description */
+    color: #666;
     margin: 0;
 }
 
+/* --- 6. NOUVELLE Liste de Fichiers (pour les pages de section) --- */
+.file-list-section {
+    background: var(--light-color);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.file-list-section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.file-list {
+    list-style: none;
+    padding: 0;
+}
+.file-list li {
+    border-bottom: 1px solid #f0f0f0;
+}
+.file-list li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.3s ease;
+}
+.file-list li a:hover {
+    background: #f9f9f9;
+}
+.file-list li i {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-right: 20px;
+    width: 30px; /* Aligne le texte */
+}
+/* Icônes de fichier spécifiques */
+.file-list li i.fa-file-pdf { color: #D9534F; }
+.file-list li i.fa-file-powerpoint { color: #F0AD4E; }
+.file-list li i.fa-file-word { color: #0275D8; }
 
-/* --- 6. Liste des Projets (Page 'projets.html') --- */
+.file-list li span {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.file-list li .file-info {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #777;
+    margin-left: auto; /* Pousse l'info à droite */
+}
+
+
+/* --- 7. Liste des Projets (Page 'projets.html') --- */
+/* (Ce sont les mêmes styles que .card-grid, mais renommés 
+   pour plus de clarté si vous voulez les styliser différemment plus tard) */
 .project-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
-
 .project-card {
     background: var(--light-color);
     border: 1px solid #ddd;
@@ -158,15 +246,34 @@ nav ul li a.active, nav ul li a:hover {
 }
 .project-card h3 {
     margin-top: 0;
+    color: var(--primary-color);
+}
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+.cta-button:hover {
+    background: #003D6B;
 }
 
-/* --- 7. Détail d'un Projet (Page 'modele-projet.html') --- */
+/* --- 8. Détail d'un Projet (Page 'modele-projet.html') --- */
 .project-detail section {
     background: var(--light-color);
     padding: 2em;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.project-detail section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
 }
 .project-detail img {
     max-width: 100%;
@@ -179,11 +286,12 @@ nav ul li a.active, nav ul li a:hover {
     padding-left: 20px;
 }
 
-/* --- 8. Footer --- */
+/* --- 9. Footer --- */
 footer {
     text-align: center;
     padding: 2em 0;
     margin-top: 30px;
     background: #e0e0e0;
     color: #555;
+    clear: both; /* Pour être sûr qu'il est en bas */
 }
