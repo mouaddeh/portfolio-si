@@ -1,4 +1,8 @@
-/* --- Variables (changez les couleurs ici) --- */
+/* ===================================================
+   PORTFOLIO SI - STYLE.CSS COMPLET
+   =================================================== */
+
+/* --- 1. Variables (changez les couleurs ici) --- */
 :root {
     --primary-color: #005A9C; /* Bleu institutionnel */
     --secondary-color: #f4f4f4; /* Fond gris clair */
@@ -7,7 +11,7 @@
     --font-family: 'Arial', sans-serif;
 }
 
-/* --- Réglages de base --- */
+/* --- 2. Réglages de base --- */
 body {
     font-family: var(--font-family);
     line-height: 1.7;
@@ -33,7 +37,7 @@ h3 { font-size: 1.5em; }
 
 p { margin-bottom: 15px; }
 
-/* --- Header & Navigation --- */
+/* --- 3. Header & Navigation --- */
 header {
     background: var(--primary-color);
     color: var(--light-color);
@@ -68,7 +72,7 @@ nav ul li a.active, nav ul li a:hover {
     border-bottom: 2px solid var(--light-color);
 }
 
-/* --- Boutons (Call to Action) --- */
+/* --- 4. Bouton d'action (CTA) --- */
 .cta-button {
     display: inline-block;
     background: var(--primary-color);
@@ -83,16 +87,57 @@ nav ul li a.active, nav ul li a:hover {
     background: #003D6B; /* Version plus foncée du bleu */
 }
 
-/* --- Page d'accueil (Hero) --- */
-.hero {
-    background: var(--light-color);
-    padding: 3em;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+/* --- 5. Grille de Cartes (Page d'accueil) --- */
+.card-grid {
+    display: grid;
+    /* Crée 3 colonnes, mais s'adapte à moins */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Espace entre les cartes */
 }
 
-/* --- Liste des Projets (Cartes) --- */
+.card {
+    background: var(--light-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: left;
+    text-decoration: none;
+    color: var(--dark-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent; /* Bordure transparente par défaut */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Style pour la carte surlignée */
+.card.highlighted {
+    border-color: var(--primary-color);
+}
+
+/* Style des icônes */
+.card i {
+    font-size: 2.5em; /* Taille de l'icône */
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0 0 5px 0;
+    color: var(--dark-color); /* Assure que le titre est sombre */
+    font-size: 1.4em;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #666; /* Gris pour la description */
+    margin: 0;
+}
+
+
+/* --- 6. Liste des Projets (Page 'projets.html') --- */
 .project-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -115,7 +160,7 @@ nav ul li a.active, nav ul li a:hover {
     margin-top: 0;
 }
 
-/* --- Détail d'un Projet --- */
+/* --- 7. Détail d'un Projet (Page 'modele-projet.html') --- */
 .project-detail section {
     background: var(--light-color);
     padding: 2em;
@@ -134,7 +179,7 @@ nav ul li a.active, nav ul li a:hover {
     padding-left: 20px;
 }
 
-/* --- Footer --- */
+/* --- 8. Footer --- */
 footer {
     text-align: center;
     padding: 2em 0;
