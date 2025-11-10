@@ -73,7 +73,7 @@ a {
 /* LE CONTENEUR DES TITRES, REMONTÉ */
 .landing-portfolio-title {
     position: absolute;
-    top: 18vh;  /* REMONTÉ ENCORE PLUS HAUT (était 25vh) */
+    top: 15vh;  /* REMONTÉ ENCORE PLUS HAUT (était 25vh) */
     left: 10vw; 
     z-index: 1; 
     display: flex;
