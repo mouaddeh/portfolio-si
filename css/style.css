@@ -203,44 +203,95 @@ a {
 }
 
 /* ===================================================
-   5. Styles pour les pages de contenu (TDs, Cours, Contact, etc.)
+ /* ===================================================
+   5. NOUVEAU STYLE - PAGES DE CONTENU (Fond Blanc)
    =================================================== */
-.content-page-wrapper {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 40px;
-    background-color: #fff; /* Fond blanc pour les pages de contenu */
-    color: #333; /* Texte sombre sur fond clair */
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    min-height: 80vh;
-}
-.content-header {
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-}
-.content-header h1 {
-    font-family: var(--font-heading);
-    color: #222;
-    font-size: 3em;
-    text-transform: uppercase;
-}
-.content-header p {
-    font-size: 1.2em;
-    color: #555;
-    font-style: italic;
-}
-.content-back-link {
-    display: inline-block;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: var(--accent-color);
-}
-.content-back-link:hover {
-    text-decoration: underline;
+
+/* Le fond blanc pour le corps de la page */
+body.content-page-light {
+    background-color: #fff; /* FOND BLANC */
+    color: #333; /* TEXTE NOIR */
 }
 
+/* Le nouveau menu de navigation */
+.content-main-nav {
+    background-color: var(--dark-bg); /* Fond noir (rappel du thème) */
+    color: var(--light-text);
+    padding: 15px 40px;
+    border-bottom: 2px solid #333;
+}
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    color: var(--light-text);
+    text-decoration: none;
+}
+.content-main-nav nav a {
+    font-family: var(--font-body);
+    font-weight: bold;
+    color: var(--light-text);
+    text-decoration: none;
+    margin-left: 25px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+.content-main-nav nav a:hover {
+    border-bottom-color: var(--light-text);
+}
+.content-main-nav nav a.active {
+    border-bottom-color: #fff; /* Souligne la page active */
+}
+
+/* Le conteneur du contenu (fond blanc) */
+.content-wrapper-light {
+    max-width: 900px;
+    margin: 40px auto; /* Espace après le menu */
+    padding: 20px;
+}
+
+/* Le titre de la page (style "Table des Matières") */
+.content-title-light {
+    font-family: var(--font-heading);
+    font-size: 4.5em;
+    color: #111; /* TITRE NOIR */
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+/* Le style du contenu (texte noir) */
+.content-section-light h2 {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    color: #111;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+.content-section-light p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333; /* Texte noir */
+    margin-bottom: 15px;
+}
+.content-section-light ul, .content-section-light ol {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333;
+    padding-left: 30px;
+}
+.content-section-light li {
+    margin-bottom: 10px;
+}
 /* ===================================================
    6. Styles Responsive
    =================================================== */
@@ -284,71 +335,4 @@ a {
     }
 }
 /* ===================================================
-   7. STYLES POUR LES PAGES DE CONTENU (Fond Noir)
-   =================================================== */
-.content-page {
-    background-color: var(--dark-bg); /* Fond noir */
-    color: var(--light-text);
-}
-
-.back-button {
-    position: fixed; /* Reste visible quand on scrolle */
-    top: 30px;
-    left: 30px;
-    font-family: var(--font-body);
-    font-weight: bold;
-    font-size: 1em;
-    color: var(--light-text);
-    text-decoration: none;
-    padding: 10px 15px;
-    border: 2px solid var(--light-text);
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    z-index: 100;
-}
-.back-button:hover {
-    background: var(--light-text);
-    color: var(--dark-bg);
-}
-
-.content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 120px 40px 40px 40px; /* 120px en haut pour laisser place au bouton "Retour" */
-}
-
-.content-title {
-    font-family: var(--font-heading);
-    font-size: 4.5em;
-    color: var(--light-text);
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 20px;
-}
-
-.content-section {
-    margin-bottom: 30px;
-}
-.content-section h2 {
-    font-family: var(--font-heading);
-    font-size: 2em;
-    color: var(--light-text);
-    margin-bottom: 15px;
-}
-.content-section p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #ccc; /* Un peu moins blanc que le titre */
-    margin-bottom: 15px;
-}
-.content-section ul, .content-section ol {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #ccc;
-    padding-left: 30px;
-}
-.content-section li {
-    margin-bottom: 10px;
-}
+ 
