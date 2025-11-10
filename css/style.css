@@ -527,3 +527,68 @@ body.content-page-light {
     margin-right: 15px;
     width: 30px;
 }
+/* ===================================================
+   11. ANIMATIONS DE TRANSITION DE PAGE
+   =================================================== */
+
+/* --- A. Animation de SORTIE (pour index.html) --- */
+/* Ces styles s'appliquent quand le body a la classe 'page-exit' */
+
+/* Fait monter "SI" */
+.landing-page.page-exit .si-text {
+    transition: all 0.8s cubic-bezier(0.6, -0.28, 0.73, 0.04); /* Accélération */
+    transform: translateY(-80vh); /* Monte */
+    filter: blur(10px); /* Flou */
+    opacity: 0;
+}
+
+/* Fait descendre "PORTFOLIO" */
+.landing-page.page-exit .portfolio-text {
+    transition: all 0.8s cubic-bezier(0.6, -0.28, 0.73, 0.04);
+    transform: translateY(80vh); /* Descend */
+    filter: blur(10px); /* Flou */
+    opacity: 0;
+}
+
+/* Fait disparaître le texte du bas et le header */
+.landing-page.page-exit .landing-content,
+.landing-page.page-exit .header-info {
+    transition: all 0.5s ease-out;
+    filter: blur(5px);
+    opacity: 0;
+}
+
+/* --- B. Animation d'ENTRÉE (pour table-of-contents.html) --- */
+
+/* Applique les animations au chargement de la page */
+.toc-title {
+    /* L'animation s'appelle 'fadeInDown', dure 0.8s */
+    animation: fadeInDown 0.8s ease-out;
+}
+.toc-buttons-grid {
+    /* L'animation s'appelle 'fadeInUp', dure 0.8s, avec un délai */
+    animation: fadeInUp 0.8s ease-out 0.2s;
+    animation-fill-mode: backwards; /* Reste invisible avant le début */
+}
+
+/* Définition des animations (Keyframes) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
