@@ -34,14 +34,48 @@ a {
     color: var(--light-text);
 }
 /* ===================================================
-   3. STYLES CORRIGÉS DE LA LANDING PAGE (V8 - Bonnes Tailles)
+   3. STYLES CORRIGÉS DE LA LANDING PAGE (V9 - Avec Background)
    =================================================== */
 .landing-page {
     position: relative; /* CONTEXTE POUR LE POSITIONNEMENT ABSOLU */
     min-height: 100vh;
     padding: 40px;
     overflow: hidden; /* Empêche les débordements */
+    
+    /* --- AJOUT DE L'IMAGE DE FOND --- */
+    /* Ce chemin est correct si vous avez suivi l'étape 1 */
+    background: url('../assets/images/background-laptop.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* L'image reste fixe quand on scrolle */
 }
+
+/* NOUVEAU : Overlay pour la lisibilité */
+.landing-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Calque noir à 70% d'opacité. Ajustez le '0.7' si c'est trop sombre/clair */
+    background-color: rgba(26, 26, 26, 0.7); 
+    z-index: 0; /* Se place juste au-dessus de l'image de fond */
+}
+
+/* MODIFIÉ : On s'assure que TOUT le contenu est au-dessus de l'overlay */
+.landing-main {
+    position: relative; /* Doit être 'relative' pour que z-index fonctionne */
+    z-index: 1; /* Se place par-dessus l'overlay (::before) */
+    
+    /* Le reste est inchangé */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto; 
+    min-height: calc(100vh - 80px); /* Prend la hauteur de l'écran (moins le padding) */
+}
+
 
 /* Positionnement du texte en haut à droite */
 .header-info {
@@ -50,26 +84,24 @@ a {
     line-height: 1.4;
     color: #bbb;
     position: absolute;
-    top: 40px; /* Cloué en haut */
-    right: 40px; /* Cloué à droite */
+    top: 0; /* Aligné en haut du .landing-main */
+    right: 0; /* Aligné à droite du .landing-main */
     text-align: right;
-    z-index: 10;
+    z-index: 3; /* Par-dessus tout le reste */
 }
 
-/* LE CONTENEUR DES TITRES, AU CENTRE */
 /* LE CONTENEUR DES TITRES, DÉCALÉ EN HAUT À GAUCHE */
 .landing-portfolio-title {
     position: absolute;
     top: 25vh;  /* DÉCALAGE DU HAUT (25% de la hauteur de l'écran) */
     left: 10vw; /* DÉCALAGE DE LA GAUCHE (10% de la largeur de l'écran) */
-    /* Les lignes 'left: 50%', 'top: 50%' et 'transform' sont supprimées */
     
-    z-index: 0; /* EN ARRIÈRE-PLAN */
+    z-index: 1; /* Derrière le texte du bas */
     display: flex;
-    flex-direction: column; /* Superpose les textes verticalement */
-    align-items: flex-start; /* Aligne les textes à gauche */
+    flex-direction: column; 
+    align-items: flex-start; 
     user-select: none;
-    width: 100%; /* S'assure qu'il ne déborde pas trop */
+    width: 100%; 
     max-width: 1400px;
 }
 
@@ -100,11 +132,11 @@ a {
     align-items: flex-start;
     gap: 60px;
     position: absolute;
-    bottom: 40px; /* Cloué en bas */
-    left: 40px;
-    right: 40px;
-    z-index: 1; /* PAR-DESSUS LE TITRE (IMPORTANT) */
-    width: calc(100% - 80px);
+    bottom: 0; /* Aligné en bas du .landing-main */
+    left: 0;
+    right: 0;
+    z-index: 2; /* Par-dessus le titre géant, mais sous le header-info */
+    width: 100%;
 }
 
 .landing-text-left, .landing-text-right {
@@ -112,8 +144,7 @@ a {
     font-size: 1.1em;
     line-height: 1.8;
     color: #ccc;
-    /* Ajout d'une ombre légère pour la lisibilité si ça passe sur le titre */
-    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    text-shadow: 0 0 5px rgba(0,0,0,0.7); /* Ombre pour lisibilité */
 }
 
 /* Le bouton */
@@ -136,7 +167,6 @@ a {
     background: var(--light-text);
     color: var(--dark-bg);
 }
-
 /* ===================================================
    4. Styles de la Table of Contents (table-of-contents.html)
    =================================================== */
