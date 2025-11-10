@@ -373,7 +373,8 @@ body.content-page-light {
     font-size: 1.8em;
     color: #F0AD4E; /* Couleur orange PowerPoint */
     margin-right: 15px;
-    width: 30px; /* Aligne le texte */
+    width: 30px; /* Aligne le texte */ 
+}
    
    /* Style de l'icône ODT (type Word) */
 .file-list-light li .fa-file-word {
@@ -382,6 +383,12 @@ body.content-page-light {
     margin-right: 15px;
     width: 30px; /* Aligne le texte */
 }
+/* Style de l'icône Lien Externe */
+.file-list-light li .fa-external-link-alt {
+    font-size: 1.8em;
+    color: #007bff; /* Couleur bleue standard pour les liens */
+    margin-right: 15px;
+    width: 30px; /* Aligne le texte */
 }
 /* "PDF" à droite */
 .file-list-light li .file-info {
