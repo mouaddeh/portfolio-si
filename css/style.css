@@ -379,3 +379,58 @@ body.content-page-light {
     padding: 3px 8px;
     border-radius: 5px;
 }
+/* ===================================================
+   8. STYLES POUR LE FORMULAIRE DE CONTACT (Light)
+   =================================================== */
+.contact-form-light {
+    margin-top: 30px;
+}
+.form-group-light {
+    margin-bottom: 20px;
+}
+.form-group-light label {
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+.form-group-light input,
+.form-group-light textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-family: var(--font-body);
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    box-sizing: border-box; /* Important */
+    transition: border-color 0.3s;
+}
+.form-group-light input:focus,
+.form-group-light textarea:focus {
+    border-color: #555; /* Surligne le champ en focus */
+    outline: none;
+}
+.form-group-light textarea {
+    resize: vertical;
+}
+
+/* Bouton d'envoi */
+.contact-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-family: var(--font-heading);
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: var(--dark-bg); /* Fond noir */
+    color: var(--light-text); /* Texte blanc */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.contact-button:hover {
+    opacity: 0.8;
+}
