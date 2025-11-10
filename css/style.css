@@ -455,3 +455,73 @@ body.content-page-light {
 .contact-button:hover {
     opacity: 0.8;
 }
+/* ===================================================
+   9. STYLES POUR LES CARTES TD (Page Projets)
+   =================================================== */
+.td-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Une colonne par défaut */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.td-card {
+    background: #fdfdfd; /* Un blanc très légèrement cassé */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    overflow: hidden; /* Pour que la liste ne dépasse pas */
+}
+.td-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6em;
+    color: #111;
+    padding: 20px 25px 0 25px;
+}
+.td-card p {
+    font-size: 1em;
+    color: #555;
+    padding: 10px 25px 20px 25px;
+    border-bottom: 1px solid #eee;
+}
+
+/* On réutilise la liste de fichiers, mais sans bordures */
+.td-card .file-list-light {
+    margin-top: 0;
+    border-top: none;
+}
+.td-card .file-list-light li:last-child {
+    border-bottom: none;
+}
+.td-card .file-list-light li a:hover {
+    background: #f5f5f5;
+}
+
+/* Grid pour 2 colonnes sur écrans larges */
+@media (min-width: 768px) {
+    .td-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    }
+}
+
+
+/* ===================================================
+   10. NOUVELLES ICÔNES DE FICHIERS
+   =================================================== */
+/* (À ajouter à la fin de la Section 8 si vous préférez) */
+
+/* Style de l'icône Excel */
+.file-list-light li .fa-file-excel {
+    font-size: 1.8em;
+    color: #1D6F42; /* Couleur verte Excel */
+    margin-right: 15px;
+    width: 30px;
+}
+
+/* Style de l'icône Image */
+.file-list-light li .fa-file-image {
+    font-size: 1.8em;
+    color: #555; /* Couleur grise neutre */
+    margin-right: 15px;
+    width: 30px;
+}
