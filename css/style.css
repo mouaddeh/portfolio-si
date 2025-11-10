@@ -76,7 +76,7 @@ a {
 /* LE CONTENEUR DES TITRES, DÉCALÉ EN HAUT À GAUCHE */
 .landing-portfolio-title {
     position: absolute;
-    top: 20vh;  /* REMONTÉ (était 25vh) */  /* DÉCALAGE DU HAUT (25% de la hauteur de l'écran) */
+    top: 15vh;  /* REMONTÉ (était 25vh) */  /* DÉCALAGE DU HAUT (25% de la hauteur de l'écran) */
     left: 10vw; /* DÉCALAGE DE LA GAUCHE (10% de la largeur de l'écran) */
     
     z-index: 1; /* Derrière le texte du bas */
