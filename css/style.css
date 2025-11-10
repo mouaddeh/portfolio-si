@@ -34,7 +34,7 @@ a {
     color: var(--light-text);
 }
 /* ===================================================
-   3. STYLES CORRIGÉS DE LA LANDING PAGE (V7 - Titres superposés)
+   3. STYLES CORRIGÉS DE LA LANDING PAGE (V8 - Bonnes Tailles)
    =================================================== */
 .landing-page {
     position: relative; /* CONTEXTE POUR LE POSITIONNEMENT ABSOLU */
@@ -60,7 +60,7 @@ a {
 .landing-portfolio-title {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 50%; /* Centré verticalement */
     transform: translate(-50%, -50%); /* Centrage parfait */
     z-index: 0; /* EN ARRIÈRE-PLAN */
     
@@ -68,29 +68,32 @@ a {
     flex-direction: column; /* Superpose les textes verticalement */
     align-items: flex-start; /* Aligne les textes à gauche (l'effet "en haut du PO") */
     user-select: none;
+    width: 100%; /* Prend toute la largeur pour le centrage */
+    max-width: 1400px; /* Limite */
+    padding: 0 40px; /* Pour correspondre au padding de la page */
 }
 
-/* Le texte "SI" */
+/* Le texte "SI" (un peu plus petit) */
 .si-text {
-    font-family: var(--font-heading); /* Même police que PORTFOLIO */
-    font-size: 18vw; /* "meme taille" */
-    line-height: 1.0; /* Ligne très serrée */
+    font-family: var(--font-heading);
+    font-size: 8vw; /* TAILLE RÉDUITE */
+    line-height: 1; /* Ligne serrée */
     color: var(--light-text);
     text-transform: uppercase;
 }
 
-/* Le texte "PORTFOLIO" */
+/* Le texte "PORTFOLIO" (le titre principal) */
 .portfolio-text {
-    font-family: var(--font-heading); /* Même police */
-    font-size: 18vw; /* "meme taille" */
+    font-family: var(--font-heading);
+    font-size: 14vw; /* TAILLE PRINCIPALE */
     line-height: 0.8; /* Ligne très serrée */
     color: var(--light-text);
     text-transform: uppercase;
-    white-space: nowrap; /* Empêche le mot de se casser */
+    white-space: nowrap;
 }
 
 
-/* LA GRILLE DE CONTENU EN AVANT-PLAN ET EN BAS */
+/* LA GRILLE DE CONTENU EN AVANT-PLAN ET EN BAS (POUR ÊTRE VISIBLE) */
 .landing-content {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 COLONNES */
@@ -98,10 +101,10 @@ a {
     gap: 60px;
     position: absolute;
     bottom: 40px; /* Cloué en bas */
-    left: 40px; /* Cloué à gauche */
-    right: 40px; /* Cloué à droite */
-    z-index: 1; /* EN AVANT-PLAN */
-    width: calc(100% - 80px); /* Prend toute la largeur moins le padding */
+    left: 40px;
+    right: 40px;
+    z-index: 1; /* PAR-DESSUS LE TITRE (IMPORTANT) */
+    width: calc(100% - 80px);
 }
 
 .landing-text-left, .landing-text-right {
@@ -109,6 +112,8 @@ a {
     font-size: 1.1em;
     line-height: 1.8;
     color: #ccc;
+    /* Ajout d'une ombre légère pour la lisibilité si ça passe sur le titre */
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
 
 /* Le bouton */
@@ -131,7 +136,6 @@ a {
     background: var(--light-text);
     color: var(--dark-bg);
 }
-
 
 /* ===================================================
    4. Styles de la Table of Contents (table-of-contents.html)
@@ -231,15 +235,15 @@ a {
 }
 
 /* ===================================================
-   6. Styles Responsive (Corrections V7)
+   6. Styles Responsive (Corrections V8)
    =================================================== */
-/* (Remplacez aussi l'ancienne section 6) */
 @media (max-width: 992px) {
     /* Sur mobile, on change de stratégie : tout devient statique */
     .landing-page {
         position: static;
         min-height: auto;
         padding-top: 80px; /* Plus d'espace en haut */
+        padding-bottom: 40px;
     }
     .header-info {
         position: static; /* N'est plus cloué */
@@ -251,9 +255,15 @@ a {
         transform: none;
         align-items: center; /* Centre le texte sur mobile */
         margin-bottom: 40px;
+        text-align: center;
+        padding: 0 10px;
     }
-    .si-text, .portfolio-text {
-        font-size: 22vw;
+    .si-text {
+        font-size: 12vw;
+        line-height: 1;
+    }
+    .portfolio-text {
+        font-size: 18vw;
         line-height: 1;
     }
     .landing-content {
