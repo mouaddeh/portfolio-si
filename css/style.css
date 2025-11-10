@@ -335,4 +335,47 @@ body.content-page-light {
     }
 }
 /* ===================================================
- 
+ /* ===================================================
+ 7. STYLES POUR LES LISTES DE FICHIERS (Page Cours - Couleurs Corrigées)
+   =================================================== */
+.file-list-light {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+}
+.file-list-light li {
+    border-bottom: 1px solid #eee;
+}
+.file-list-light li a {
+    display: flex;
+    align-items: center;
+    padding: 18px 10px;
+    text-decoration: none;
+    color: #333; /* COULEUR DU TEXTE EN NOIR */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background 0.3s;
+}
+.file-list-light li a:hover {
+    background: #f8f8f8;
+}
+
+/* Style de l'icône PDF */
+.file-list-light li .fa-file-pdf {
+    font-size: 1.8em;
+    color: #D9534F; /* COULEUR ROUGE PDF (pour bien ressortir) */
+    margin-right: 15px;
+    width: 30px; /* Aligne le texte */
+}
+
+/* "PDF" à droite */
+.file-list-light li .file-info {
+    margin-left: auto; /* Pousse l'étiquette "PDF" à droite */
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #777; /* COULEUR GRIS FONCÉ */
+    background: #eee;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
