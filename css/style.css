@@ -91,6 +91,8 @@ a {
     line-height: 1;
     color: var(--light-text);
     text-transform: uppercase;
+   /* AJOUT : Tire le mot "SI" vers le haut de 20 pixels */
+    transform: translateY(-20px);
 }
 
 /* Le texte "PORTFOLIO" */
