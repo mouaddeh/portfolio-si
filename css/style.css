@@ -57,20 +57,20 @@ a {
 }
 
 /* LE CONTENEUR DES TITRES, AU CENTRE */
+/* LE CONTENEUR DES TITRES, DÉCALÉ EN HAUT À GAUCHE */
 .landing-portfolio-title {
     position: absolute;
-    left: 50%;
-    top: 50%; /* Centré verticalement */
-    transform: translate(-50%, -50%); /* Centrage parfait */
-    z-index: 0; /* EN ARRIÈRE-PLAN */
+    top: 25vh;  /* DÉCALAGE DU HAUT (25% de la hauteur de l'écran) */
+    left: 10vw; /* DÉCALAGE DE LA GAUCHE (10% de la largeur de l'écran) */
+    /* Les lignes 'left: 50%', 'top: 50%' et 'transform' sont supprimées */
     
+    z-index: 0; /* EN ARRIÈRE-PLAN */
     display: flex;
     flex-direction: column; /* Superpose les textes verticalement */
-    align-items: flex-start; /* Aligne les textes à gauche (l'effet "en haut du PO") */
+    align-items: flex-start; /* Aligne les textes à gauche */
     user-select: none;
-    width: 100%; /* Prend toute la largeur pour le centrage */
-    max-width: 1400px; /* Limite */
-    padding: 0 40px; /* Pour correspondre au padding de la page */
+    width: 100%; /* S'assure qu'il ne déborde pas trop */
+    max-width: 1400px;
 }
 
 /* Le texte "SI" (un peu plus petit) */
