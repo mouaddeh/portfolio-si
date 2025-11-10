@@ -1,11 +1,11 @@
 /* ===================================================
-   PORTFOLIO SI - STYLE.CSS COMPLET (V4 - Corrigé)
+   PORTFOLIO SI - STYLE.CSS COMPLET (V10 - Cache + Noir/Blanc)
    =================================================== */
 
 /* --- 1. Variables de base --- */
 :root {
-    --dark-bg: #1a1a1a; /* Fond très sombre */
-    --light-text: #f0f0f0; /* Texte clair sur fond sombre */
+    --dark-bg: #111; /* FOND NOIR PROFOND (votre demande) */
+    --light-text: #f0f0f0; /* Texte clair/blanc */
     --accent-color: #007bff;
     --border-color: #555;
 
@@ -24,7 +24,7 @@
 body {
     font-family: var(--font-body);
     color: var(--light-text);
-    background-color: var(--dark-bg);
+    background-color: var(--dark-bg); /* Fond noir par défaut */
     line-height: 1.6;
     overflow-x: hidden; /* Empêche le scroll horizontal */
 }
@@ -33,32 +33,29 @@ a {
     text-decoration: none;
     color: var(--light-text);
 }
+
 /* ===================================================
-   3. STYLES CORRIGÉS DE LA LANDING PAGE (V-Gauche - Sans Background)
+   3. STYLES DE LA LANDING PAGE (index.html)
    =================================================== */
 .landing-page {
-    position: relative; /* CONTEXTE POUR LE POSITIONNEMENT ABSOLU */
+    position: relative;
     min-height: 100vh;
     padding: 40px;
-    overflow: hidden; /* Empêche les débordements */
-    
-    /* Le fond redevient noir uni */
-    background-color: var(--dark-bg); 
+    overflow: hidden;
+    background-color: var(--dark-bg); /* FOND NOIR (votre demande) */
 }
 
-/* On s'assure que TOUT le contenu est positionné correctement */
 .landing-main {
     position: relative; 
-    z-index: 1; /* Se place au-dessus du fond */
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1400px;
     width: 100%;
     margin: 0 auto; 
-    min-height: calc(100vh - 80px); /* Prend la hauteur de l'écran (moins le padding) */
+    min-height: calc(100vh - 80px);
 }
-
 
 /* Positionnement du texte en haut à droite */
 .header-info {
@@ -67,19 +64,18 @@ a {
     line-height: 1.4;
     color: #bbb;
     position: absolute;
-    top: 0; /* Aligné en haut du .landing-main */
-    right: 0; /* Aligné à droite du .landing-main */
+    top: 0;
+    right: 0;
     text-align: right;
-    z-index: 3; /* Par-dessus tout le reste */
+    z-index: 3; 
 }
 
-/* LE CONTENEUR DES TITRES, DÉCALÉ EN HAUT À GAUCHE */
+/* LE CONTENEUR DES TITRES, REMONTÉ */
 .landing-portfolio-title {
     position: absolute;
-    top: 15vh;  /* REMONTÉ (était 25vh) */  /* DÉCALAGE DU HAUT (25% de la hauteur de l'écran) */
-    left: 10vw; /* DÉCALAGE DE LA GAUCHE (10% de la largeur de l'écran) */
-    
-    z-index: 1; /* Derrière le texte du bas */
+    top: 18vh;  /* REMONTÉ ENCORE PLUS HAUT (était 25vh) */
+    left: 10vw; 
+    z-index: 1; 
     display: flex;
     flex-direction: column; 
     align-items: flex-start; 
@@ -88,46 +84,46 @@ a {
     max-width: 1400px;
 }
 
-/* Le texte "SI" (un peu plus petit) */
+/* Le texte "SI" */
 .si-text {
     font-family: var(--font-heading);
-    font-size: 8vw; /* TAILLE RÉDUITE */
-    line-height: 1; /* Ligne serrée */
+    font-size: 8vw; 
+    line-height: 1;
     color: var(--light-text);
     text-transform: uppercase;
 }
 
-/* Le texte "PORTFOLIO" (le titre principal) */
+/* Le texte "PORTFOLIO" */
 .portfolio-text {
     font-family: var(--font-heading);
-    font-size: 14vw; /* TAILLE PRINCIPALE */
-    line-height: 0.8; /* Ligne très serrée */
+    font-size: 14vw;
+    line-height: 0.8;
     color: var(--light-text);
     text-transform: uppercase;
     white-space: nowrap;
 }
 
-
-/* LA GRILLE DE CONTENU EN AVANT-PLAN ET EN BAS (POUR ÊTRE VISIBLE) */
+/* LA GRILLE DE CONTENU EN BAS */
 .landing-content {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 COLONNES */
+    grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     gap: 60px;
     position: absolute;
-    bottom: 0; /* Aligné en bas du .landing-main */
+    bottom: 0; 
     left: 0;
     right: 0;
     z-index: 2; /* Par-dessus le titre géant */
     width: 100%;
 }
 
+/* TEXTE EN BLANC (votre demande) */
 .landing-text-left, .landing-text-right {
     font-family: var(--font-body);
     font-size: 1.1em;
     line-height: 1.8;
-    color: #ccc;
-    text-shadow: 0 0 5px rgba(0,0,0,0.7); /* Ombre pour lisibilité */
+    color: var(--light-text); /* DEVENU BLANC (était #ccc) */
+    text-shadow: none; /* Plus besoin d'ombre */
 }
 
 /* Le bouton */
@@ -150,6 +146,7 @@ a {
     background: var(--light-text);
     color: var(--dark-bg);
 }
+
 /* ===================================================
    4. Styles de la Table of Contents (table-of-contents.html)
    =================================================== */
@@ -159,7 +156,7 @@ a {
     align-items: center;
     min-height: 100vh;
     padding: 40px;
-    background-color: #111; /* Un peu différent pour le contraste */
+    background-color: var(--dark-bg); /* FOND NOIR (cohérent) */
 }
 
 .toc-main {
@@ -208,7 +205,6 @@ a {
 /* ===================================================
    5. Styles pour les pages de contenu (TDs, Cours, Contact, etc.)
    =================================================== */
-/* (Ces styles sont une base pour vos autres pages) */
 .content-page-wrapper {
     max-width: 1000px;
     margin: 40px auto;
@@ -219,7 +215,6 @@ a {
     border-radius: 8px;
     min-height: 80vh;
 }
-/* Entête pour les pages de contenu */
 .content-header {
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 20px;
@@ -236,7 +231,6 @@ a {
     color: #555;
     font-style: italic;
 }
-/* Lien de retour */
 .content-back-link {
     display: inline-block;
     margin-bottom: 30px;
@@ -248,25 +242,24 @@ a {
 }
 
 /* ===================================================
-   6. Styles Responsive (Corrections V8)
+   6. Styles Responsive
    =================================================== */
 @media (max-width: 992px) {
-    /* Sur mobile, on change de stratégie : tout devient statique */
     .landing-page {
         position: static;
         min-height: auto;
-        padding-top: 80px; /* Plus d'espace en haut */
+        padding-top: 80px; 
         padding-bottom: 40px;
     }
     .header-info {
-        position: static; /* N'est plus cloué */
+        position: static;
         text-align: center;
         margin-bottom: 40px;
     }
     .landing-portfolio-title {
-        position: static; /* N'est plus cloué */
+        position: static;
         transform: none;
-        align-items: center; /* Centre le texte sur mobile */
+        align-items: center; 
         margin-bottom: 40px;
         text-align: center;
         padding: 0 10px;
