@@ -4,65 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Accueil Portfolio SI - [Votre Nom]</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Projets & TDs - Portfolio SI</title>
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="content-page-light">
 
-    <header class="main-header">
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <strong>SI</strong>
-                <span>Portfolio</span>
-            </a>
-           <a href="contact.html" class="contact-link">
-    <i class="fas fa-envelope"></i> Contact
-</a>
+    <header class="content-main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">PORTFOLIO SI</a>
+            <nav>
+                <a href="table-of-contents.html">Table des Matières</a>
+                <a href="a-propos.html">À Propos</a>
+                <a href="cours.html">Cours</a>
+                <a href="documents.html">Documents</a> 
+                
+                <a href="projets.html" class="active">Projets & TDs</a>
+
+                <a href="soutenance.html">Soutenance</a> 
+                <a href="ressources.html">Ressources</a> 
+                <a href="contact.html">Contact</a>
+            </nav>
         </div>
+    </header>
+
+    <main class="content-wrapper-light">
         
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Accueil</a></li>
-                <li><a href="projets.html"><i class="fas fa-file-alt"></i> TDs</a></li>
-                <li><a href="cours.html"><i class="fas fa-book"></i> Cours</a></li>
-                <li><a href="documents.html"><i class="fas fa-folder"></i> Documents SI</a></li>
-                <li><a href="certification.html"><i class="fas fa-certificate"></i> Certification</a></li>
-                <li><a href="projets.html"><i class="fas fa-briefcase"></i> Projets</a></li>
-                <li><a href="soutenance.html"><i class="fas fa-chalkboard-teacher"></i> Soutenance</a></li>
-                <li><a href="ressources.html"><i class="fas fa-link"></i> Autres ressources</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+        <h1 class="content-title-light">PROJETS & TDs</h1>
+        
+        <section class="content-section-light">
+            <h2>Travaux Dirigés de Systèmes d'Information</h2>
+            <p>
+                Voici l'ensemble des travaux dirigés réalisés au cours du semestre, de la découverte des PGI à la modélisation de données et la gestion de projet.
+            </p>
 
-    <main class="container">
-        <section class="project-list">
-            
-            <article class="project-card">
-                <h3>TD 1 : Modélisation Merise</h3>
-                <p>Analyse des flux d'information pour une bibliothèque et création des modèles MCD et MLD.</p>
-                <a href="td1.html" class="cta-button">Voir le détail</a>
+            <div class="td-grid">
+
+                <article class="td-card">
+                    <h3>TD 1 : PGI (Progiciel de Gestion Intégré)</h3>
+                    <p>Exercices de compréhension sur le fonctionnement d'un PGI (ERP) via des cas pratiques sur Excel.</p>
+                    <ul class="file-list-light">
+                        <li><a href="assets/td1/PGI_exercice.xls" target="_blank"><i class="fas fa-file-excel"></i><span>PGI_exercice.xls</span></a></li>
+                        <li><a href="assets/td1/TD1SI.docx" target="_blank"><i class="fas fa-file-word"></i><span>TD1SI.docx</span></a></li>
+                        <li><a href="assets/td1/td_PGI_exercice.docx" target="_blank"><i class="fas fa-file-word"></i><span>td_PGI_exercice.docx</span></a></li>
+                    </ul>
                 </article>
-            <article class="project-card">
-                <h3>TD 2 : Implémentation SQL</h3>
-                <p>Traduction du MLD en schéma SQL et rédaction de requêtes pour l'interrogation de la base de données.</p>
-                <a href="td2.html" class="cta-button">Voir le détail</a>
+
+                <article class="td-card">
+                    <h3>TD 2 : Prise en main d'Odoo</h3>
+                    <p>Travaux pratiques d'initiation à l'ERP Odoo, couvrant la création de modules et la gestion des flux de base.</p>
+                    <ul class="file-list-light">
+                        <li><a href="assets/td2/TP-Odoo.docx" target="_blank"><i class="fas fa-file-word"></i><span>TP-Odoo.docx</span></a></li>
+                        <li><a href="assets/td2/TD2-si.docx" target="_blank"><i class="fas fa-file-word"></i><span>TD2-si.docx</span></a></li>
+                    </ul>
                 </article>
-            </section>
+
+                <article class="td-card">
+                    <h3>TD 3 : Diagrammes de Flux</h3>
+                    <p>Modélisation des flux d'information et des acteurs (Schéma Acteur-Flux) pour un cas d'étude.</p>
+                    <ul class="file-list-light">
+                        <li><a href="assets/td3/diagramme_flux_1.pdf" target="_blank"><i class="fas fa-file-pdf"></i><span>diagramme_flux_1.pdf</span></a></li>
+                        <li><a href="assets/td3/dossier-3.docx" target="_blank"><i class="fas fa-file-word"></i><span>dossier-3.docx</span></a></li>
+                        <li><a href="assets/td3/training-shema acteur-Flux.pdf" target="_blank"><i class="fas fa-file-pdf"></i><span>training-shema acteur-Flux.pdf</span></a></li>
+                    </ul>
+                </article>
+
+                <article class="td-card">
+                    <h3>TD 4 : Livrables et Diagrammes</h3>
+                    <p>Production de diagrammes (Draw.io) et définition des livrables clés d'un projet SI.</p>
+                    <ul class="file-list-light">
+                        <li><a href="assets/td4/Diagramme1.drawio-2.png" target="_blank"><i class="fas fa-file-image"></i><span>Diagramme1.png</span></a></li>
+                        <li><a href="assets/td4/Diagramme2.drawio-4.png" target="_blank"><i class="fas fa-file-image"></i><span>Diagramme2.png</span></a></li>
+                        <li><a href="assets/td4/les-livrables-SI.pdf" target="_blank"><i class="fas fa-file-pdf"></i><span>les-livrables-SI.pdf</span></a></li>
+                    </ul>
+                </article>
+                
+                <article class="td-card">
+                    <h3>TD 5 : Gestion de Projet & MCD</h3>
+                    <p>Initiation à la gestion de projet (Diagramme de Gantt) et à la modélisation de données (MCD).</p>
+                    <ul class="file-list-light">
+                        <li><a href="assets/td5/tp-gantt.docx" target="_blank"><i class="fas fa-file-word"></i><span>tp-gantt.docx</span></a></li>
+                        <li><a href="assets/td5/online-gantt.png" target="_blank"><i class="fas fa-file-image"></i><span>online-gantt.png</span></a></li>
+                        <li><a href="assets/td5/TD-MCD.pdf" target="_blank"><i class="fas fa-file-pdf"></i><span>TD-MCD.pdf</span></a></li>
+                        <li><a href="assets/td5/Diagramme_exercice1.jpeg" target="_blank"><i class="fas fa-file-image"></i><span>Diagramme_exercice1.jpeg</span></a></li>
+                    </ul>
+                </article>
+
+            </div> </section>
+        
     </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 - [Votre Prénom et Nom] - L3 MIASHS</p>
-        </div>
-    </footer>
 
 </body>
 </html>
