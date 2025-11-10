@@ -368,7 +368,13 @@ body.content-page-light {
     margin-right: 15px;
     width: 30px; /* Aligne le texte */
 }
-
+/* Style de l'icône PowerPoint */
+.file-list-light li .fa-file-powerpoint {
+    font-size: 1.8em;
+    color: #F0AD4E; /* Couleur orange PowerPoint */
+    margin-right: 15px;
+    width: 30px; /* Aligne le texte */
+}
 /* "PDF" à droite */
 .file-list-light li .file-info {
     margin-left: auto; /* Pousse l'étiquette "PDF" à droite */
