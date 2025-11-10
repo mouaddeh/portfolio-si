@@ -283,3 +283,72 @@ a {
         text-align: center;
     }
 }
+/* ===================================================
+   7. STYLES POUR LES PAGES DE CONTENU (Fond Noir)
+   =================================================== */
+.content-page {
+    background-color: var(--dark-bg); /* Fond noir */
+    color: var(--light-text);
+}
+
+.back-button {
+    position: fixed; /* Reste visible quand on scrolle */
+    top: 30px;
+    left: 30px;
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 1em;
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid var(--light-text);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+.back-button:hover {
+    background: var(--light-text);
+    color: var(--dark-bg);
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 40px 40px 40px; /* 120px en haut pour laisser place au bouton "Retour" */
+}
+
+.content-title {
+    font-family: var(--font-heading);
+    font-size: 4.5em;
+    color: var(--light-text);
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.content-section {
+    margin-bottom: 30px;
+}
+.content-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+.content-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #ccc; /* Un peu moins blanc que le titre */
+    margin-bottom: 15px;
+}
+.content-section ul, .content-section ol {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #ccc;
+    padding-left: 30px;
+}
+.content-section li {
+    margin-bottom: 10px;
+}
