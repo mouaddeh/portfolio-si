@@ -592,3 +592,73 @@ body.content-page-light {
         transform: translateY(0);
     }
 }
+/* ===================================================
+   12. EFFET VHS / GLITCH (BACKGROUND)
+   =================================================== */
+
+/* Couche 1 : Bruit de fond (Noise) */
+.landing-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Image de bruit de fond en Base64, répétée */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiSAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY2bm5s8PDxxcXFlZWVjY2Nra2tzc3NpaWl5eXlKSkpwcHBqamptbW1hYWHs8g8gAAAAEXRSTlMAARkSIjM3bHF8g4iJi5ucnZ6fsFw1AAAAaElEQVR42u3NQQ0AIAwEwQI0sP+B/12o1B7Lh60uAUHkZJ1pafm2t/n5W3b8119b9ETxO21/kVBfE0xMLRCxfsn/EyxEMRDjUYiGIRiG4RiG4ZhmGIahGIZhGIYhGIahGIYhCIahmL8f38UAgw3c9eQAAAAASUVORK5CYII=');
+    
+    z-index: 0; /* Tout en bas, sous les lignes */
+    opacity: 0.1; /* Très subtil */
+    
+    /* Animation de "scintillement" */
+    animation: vhsNoise 0.15s steps(3, end) infinite;
+}
+
+/* Couche 2 : Lignes de balayage (Scanlines) */
+.landing-page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Crée des lignes sombres horizontales */
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0,0,0,0.3) 51%,
+        transparent 100%
+    );
+    background-size: 100% 3px; /* Hauteur des lignes */
+    
+    z-index: 1; /* Par-dessus le bruit, sous le texte */
+    opacity: 0.2; /* Très subtil */
+    
+    /* Animation de "défilement" */
+    animation: vhsScanlines 6s linear infinite;
+}
+
+/* --- Définition des animations --- */
+
+/* Fait "sauter" le bruit de fond */
+@keyframes vhsNoise {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-2%, 2%); }
+    20% { transform: translate(2%, -2%); }
+    30% { transform: translate(-2%, 2%); }
+    40% { transform: translate(2%, -2%); }
+    50% { transform: translate(-2%, 2%); }
+    60% { transform: translate(2%, -2%); }
+    70% { transform: translate(-2%, 2%); }
+    80% { transform: translate(2%, -2%); }
+    90% { transform: translate(-2%, 2%); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Fait "défiler" les lignes vers le bas */
+@keyframes vhsScanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+}
