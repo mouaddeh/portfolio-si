@@ -592,3 +592,11 @@ body.content-page-light {
         transform: translateY(0);
     }
 }
+
+/* Style de l'icône Globe (Site Web) */
+.file-list-light li .fa-globe {
+    font-size: 1.8em;
+    color: #17a2b8; /* Couleur Cyan professionnel */
+    margin-right: 15px;
+    width: 30px; /* Aligne le texte */
+}
